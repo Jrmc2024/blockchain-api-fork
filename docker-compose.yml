@@ -1,0 +1,22 @@
+services:
+  blockchain:
+    build:
+      context: ./blockchain
+    ports:
+      - "8545:8545"
+    volumes:
+      - ./blockchain:/app
+    environment:
+      - MAINNET_RPC=${MAINNET_RPC}
+    command: [ "npx", "hardhat", "node" ]
+  api:
+    build:
+      context: ./api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/app
+    depends_on:
+      - blockchain
+    environment:
+      - MAINNET_RPC=${MAINNET_RPC}
