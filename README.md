@@ -12,3 +12,9 @@ BLOCK_NUMBER=
 # use this url bellow because of compose service
 MAINNET_RPC=http://blockchain:8545
 ```
+
+## Docker
+```sh
+# build you container+images
+docker compose up --build
+```
