@@ -1,22 +1,25 @@
 services:
   blockchain:
+    container_name: blockchain-fork
     build:
       context: ./blockchain
+      dockerfile: Dockerfile
+    # restart: unless-stopped
+    tty: true
+    mem_limit: 4GB
     ports:
       - "8545:8545"
-    volumes:
-      - ./blockchain:/app
-    environment:
-      - MAINNET_RPC=${MAINNET_RPC}
-    command: [ "npx", "hardhat", "node" ]
+    env_file:
+      - .env
   api:
     build:
       context: ./api
+      dockerfile: Dockerfile
+    container_name: blockchain-api
+    restart: unless-stopped
     ports:
       - "3000:3000"
-    volumes:
-      - ./api:/app
     depends_on:
       - blockchain
-    environment:
-      - MAINNET_RPC=${MAINNET_RPC}
+    env_file:
+      - .env
