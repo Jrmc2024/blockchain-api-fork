@@ -3,10 +3,13 @@ require('dotenv').config()
 const { fastify } = require('fastify')
 const { ethers } = require('ethers')
 
-const PORT = process.env.PORT
-const MAINNET_RPC = process.env.MAINNET_RPC
+const PORT = process.env.API_PORT
+const LOCAL_RPC = process.env.LOCAL_RPC
 
-const provider = new ethers.JsonRpcProvider(MAINNET_RPC)
+const provider = new ethers.JsonRpcProvider(LOCAL_RPC)
+
+console.log("LOCAL_RPC => ", LOCAL_RPC);
+
 
 const app = fastify({
     logger: true,
