@@ -1,6 +1,6 @@
 require("dotenv").config()
 
-console.log('MAINNET_RPC => ', process.env.MAINNET_RPC);
+console.log('MAINNET_RPC_FORK => ', process.env.MAINNET_RPC_FORK);
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     networks: {
       hardhat: {
         forking: {
-          url: process.env.MAINNET_RPC,
+          url: process.env.MAINNET_RPC_FORK,
           blockNumber: process.env.BLOCK_NUMBER
         },
       },

@@ -1,12 +1,12 @@
 FROM node:20-alpine
 
+RUN mkdir /app
+
 WORKDIR /app
 
-COPY package*.json .
-COPY hardhat.config.js .
-COPY .env .
+COPY . .
 
-RUN npm install
+RUN yarn install
 
 EXPOSE 8545
 
