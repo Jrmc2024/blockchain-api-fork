@@ -1,19 +1,15 @@
 Project to run blockchain for and API.
 
-## Blockchain Envs
+## Dot Env
 ```sh
 # Change your api_key to correct api_key
 MAINNET_RPC=https://polygon-mainnet.g.alchemy.com/v2/{api_key}
-BLOCK_NUMBER=
+BLOCK_NUMBER=60324439
+LOCAL_RPC=http://blockchain:8545
+API_PORT=3000
 ```
 
-## API Envs
-```sh
-# use this url bellow because of compose service
-MAINNET_RPC=http://blockchain:8545
-```
-
-## Docker
+## Docker to up all services
 ```sh
 # build you container+images
 docker compose up --build
