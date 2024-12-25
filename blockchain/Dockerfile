@@ -8,6 +8,4 @@ COPY . .
 
 RUN yarn install
 
-EXPOSE 8545
-
 CMD [ "npx", "hardhat", "node" ]

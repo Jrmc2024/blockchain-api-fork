@@ -10,7 +10,6 @@ const provider = new ethers.JsonRpcProvider(LOCAL_RPC)
 
 console.log("LOCAL_RPC => ", LOCAL_RPC);
 
-
 const app = fastify({
     logger: true,
 })
@@ -36,7 +35,7 @@ app.post('/setBalance', async function (req, reply) {
         const { account, amount } = req.body
 
         await provider.provider.send("hardhat_setBalance", [
-            "0xB36Ce604EF05648f8d4C249B6BC2bD3b6EeB00ba",
+            account,
             `0x${ethers.parseEther(String(amount)).toString(16).toUpperCase()}`,
         ])
         const balance = (await provider.getBalance(account)).toString()

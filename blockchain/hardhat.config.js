@@ -19,6 +19,7 @@ module.exports = {
           url: process.env.MAINNET_RPC_FORK,
           blockNumber: process.env.BLOCK_NUMBER
         },
+        chainId: 31337
       },
     },
   },

@@ -9,7 +9,7 @@ RPC.
 MAINNET_RPC=https://polygon-mainnet.g.alchemy.com/v2/{api_key}
 BLOCK_NUMBER=60324439
 LOCAL_RPC=http://blockchain:8545
-API_PORT=3000
+API_PORT=3002
 ```
 
 ## Docker to up all services
